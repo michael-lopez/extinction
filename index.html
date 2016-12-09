@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<title>Baiji Dolphin</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+	<header>
+		<h1>Baiji Dolphin</h1>
+
+		<a href="#todiv"><img class="arrow" src="img/test.png"></a></li>
+
+
+		<!-- SCRIPTS START HERE -->
+		<script>
+    $(function() {
+
+        function filterPath(string) {
+            return string
+            .replace(/^\//,'')
+            .replace(/(index|default).[a-zA-Z]{3,4}$/,'')
+            .replace(/\/$/,'');
+        }
+
+        var locationPath = filterPath(location.pathname);
+        var scrollElem = scrollableElement('html', 'body');
+
+        
+        $('a[href*=#]').each(function() {
+
+            
+            var thisPath = filterPath(this.pathname) || locationPath;
+            if (  locationPath == thisPath
+                && (location.hostname == this.hostname || !this.hostname)
+                && this.hash.replace(/#/,'') ) {
+
+                    
+                    var $target = $(this.hash), target = this.hash;
+                    if (target) {
+
+                        
+                        var targetOffset = $target.offset().top;
+                        $(this).click(function(event) {
+
+                            
+                            event.preventDefault();
+
+                          
+                            $(scrollElem).animate({scrollTop: targetOffset}, 400, function() {
+
+                              
+                                location.hash = target;
+
+                            });
+                        });
+                    }
+            }
+
+        });
+
+        
+        function scrollableElement(els) {
+            for (var i = 0, argLength = arguments.length; i <argLength; i++) {
+                var el = arguments[i],
+                $scrollElement = $(el);
+                if ($scrollElement.scrollTop()> 0) {
+                    return el;
+                } else {
+                    $scrollElement.scrollTop(1);
+                    var isScrollable = $scrollElement.scrollTop()> 0;
+                    $scrollElement.scrollTop(0);
+                    if (isScrollable) {
+                        return el;
+                    }
+                }
+            }
+            return [];
+        }
+
+    });
+    </script>
+
+<!-- SCRIPTS STOP HERE -->
+		</header>
+    <div>
+      
+    </div>
+
+<body>
+      
+	<section>
+		<div class="content">
+  			 
+            <h2 id="todiv">About Baiji Dolphin</h2>
+            <div class="left">
+      			<p class="clear">These rare dolphins were located in the rivers of China. This is no longer the case now since the rich animal is now dead. Let us say or prayers for this lovely dolphin. Anyways, the dolphin was freshwater since they lived in rivers. The dolphins were officially extinct when nobody can find anymore of them. Thede dolphins were well known for their long noses. They were about 1 feet. Females are to know to have longer ones than males. </p>
+                <p class="secp"> 
+      			These dolphins were so shy and nice to people. They tend to stay away from humans since they are very shy. The dolphins have a stocky body and their color are bluish-grey or white and greyish. THe dolphin is to be said as the rarest mammals. To bad they're dead now, but no worries we will always remember them by photos.</p>
+                </p>
+            </div>
+            <div>
+                <img class="img1" src="img/photo1.jpg">
+            </div>
+            <div class="clear"></div>
+            <div>
+      			<h3 class="h33">Why they are extinct</h3>
+            </div>
+                <div>
+      			<p class="clear">The dolphins were living so nice in their rivers. Until one day it all changed. The dolphins were not extinct to some disease, or natural causes. The dolphins were driven to death because of humans. Humans use harmful fishing practices, such as electric stunning, nets, and rolling hooks. </p>
+                </div>
+                <div>	
+      			<img class="photo2" src="img/images.jpeg">
+            </div>
+
+
+        <div>
+            <p class="clear">    It was really hard finding really good pics of these dolphins. The pics that I would find were just blurry, or look like they were takien by a potato. It showed me ugly Baiji Dolphins, but they're not ugly. These are truly fasnatic creatures. Now enjoy this gif of a dolphing swimming! He's going places!</p>
+
+  		</div>
+
+
+</section>
+		
+	
+</body>
+  <footer>
+      <img id="gif" src="http://bestanimations.com/Animals/Mammals/Dolphins/dolphin/dolphin-animated-gif-16.gif" onload="google.aft&amp;&amp;google.aft(this)" width="494" height="266">
+   <p class="foot"> &copy;Michael Lopez 2016</p>
+   </footer>
+</html>
